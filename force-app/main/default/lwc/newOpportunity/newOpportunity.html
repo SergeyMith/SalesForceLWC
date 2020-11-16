@@ -1,0 +1,48 @@
+<template>
+    <div class="setwidth">
+    <lightning-card>       
+        <div class="fontsize slds-text-align_left slds-border_bottom slds-var-m-bottom_large slds-var-m-left_medium slds-var-m-right_medium">
+            <h4>Opportunity Information</h4>
+        </div>
+        <lightning-record-edit-form
+            object-api-name={opportunity}
+            onload={handleLoad}
+            onsuccess={handleSuccess}
+            record-type-id={recordTypeId.data}
+            >
+            <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                <div class="slds-size_1-of-2">
+                    <div class="slds-var-m-left_small slds-var-m-right_x-small">
+                        <lightning-input-field field-name={name}></lightning-input-field>
+                        <lightning-input-field field-name={stage} value={defaultStage}></lightning-input-field>
+                        <lightning-input-field field-name={closeDate} value={defaultDate}></lightning-input-field>
+                        <lightning-input-field field-name={owner} value={ownerId.data}></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-size_1-of-2">
+                    <div class="slds-var-m-right_small slds-var-m-left_x-small">
+                        <lightning-input-field field-name={account} value={accountId}></lightning-input-field>
+                        <lightning-input-field field-name={amount}></lightning-input-field>
+                        <lightning-input-field field-name={discount}></lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-size_1-of-1 slds-var-m-top_large slds-var-m-bottom_small">
+                    <div class="slds-grid">
+                        <div></div>
+                        <div class="slds-col_bump-left slds-var-m-right_medium">
+                            <lightning-button variant="neutral" type="reset" 
+                                    label="Reset"></lightning-button>
+                        </div>
+                        <div class="slds-var-m-right_medium">
+                            <lightning-button variant="brand" type="submit" 
+                                    label="Save"></lightning-button>                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lightning-record-edit-form>        
+    </lightning-card>
+    </div>
+</template>
+
+
